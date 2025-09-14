@@ -7,7 +7,7 @@ import AdditionalControls from "./AdditionalControls";
 import RM_Evaluation from './RM_Evaluation.jsx';
 import EmployeeDetails from './EmployeeDetails.jsx';
 import AssetDetails from './AssetDetails.jsx';
-import clipboardIcon from '../assets/svg/clipboard.svg';
+import clipboardIcon from '../assets/svg/clipboard(2).svg';
 
 const HardwareAssetReport = () => {
   // Sample data for the report
