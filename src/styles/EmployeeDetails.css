@@ -1,0 +1,95 @@
+.employee-card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Collapse arrow */
+.employee-collapse {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Header */
+.employee-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Status legend */
+.employee-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-office {
+  background-color: #4caf50;
+}
+
+.status-home {
+  background-color: #ff9800;
+}
+
+.status-leave {
+  background-color: #f44336;
+}
+
+.status-undeclared {
+  background-color: #9e9e9e;
+}
+
+.status-holiday {
+  background-color: #2196f3;
+}
+
+/* Table-style headers */
+.task-table-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 12px;
+  background-color:#EFF6FF;
+}
+
+.task-table-header > div {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.task-table-header svg {
+  vertical-align: middle;
+}
+
+.header-date {
+  width: 360px;
+}

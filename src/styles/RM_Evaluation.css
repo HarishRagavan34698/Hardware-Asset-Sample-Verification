@@ -1,0 +1,164 @@
+/* Existing styles */
+
+.box {
+	background-color: #f5f6f7;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+	padding: 24px;
+	min-height: 40vh;
+	width: 100%;
+	max-width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Top-right controls */
+.top-right-controls {
+	position: absolute;
+	top: 16px;
+	right: 24px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 12px;
+}
+
+/* Note indicator */
+.note-indicator {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+}
+
+.note-icon {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.note-dot {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	width: 8px;
+	height: 8px;
+	background-color: #8b5cf6;
+	border-radius: 50%;
+}
+
+.note-text {
+	font-size: 0.75rem;
+	color: #6b7280;
+	font-weight: 500;
+}
+
+.note-header {
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin: -24px -16px 16px -16px; /* overlaps padding to sit flush */
+}
+
+/* Action buttons */
+.action-buttons {
+	display: flex;
+	gap:12px;
+	margin-top: -8px;
+}
+
+.action-btn {
+	display: flex;
+	align-items: center;	
+	border-radius: 6px;
+	background: transparent;
+	color: #3b82f6;
+	font-size: 0.75rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	border: none;           /* removes any default border */
+	outline: none;
+}
+
+action-btn:focus,
+.action-btn:hover {
+  border: none;
+  outline: none;
+  background: transparent; /* optional: prevents background flash */
+}
+
+.note-popup-inline {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 360px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px 16px 16px 16px;
+  border-radius: 8px;
+  z-index: 100;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.note-popup-inline h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.note-popup-inline p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.note-popup-inline ul {
+  padding-left: 18px;
+  margin: 8px 0;
+}
+
+.note-popup-inline li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #00AEEF;
+  color: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 24px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.2s ease;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.flip-left {
+  right: auto;
+  left: 0;
+}
+
+
+/* Additional styles can follow */

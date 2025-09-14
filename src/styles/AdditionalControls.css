@@ -1,0 +1,164 @@
+.additional-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: #f5f6f7;
+  color: #374151;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Top Section - Save as Draft button positioned top right */
+.top-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+/* Comment Section */
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.comment-section label {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 900;
+  text-align: left;
+}
+
+.textarea-container {
+  width: 100%;
+}
+
+.submit-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+}
+
+.comment-section textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: #000000;
+  resize: none;
+  min-height: 8rem;
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-align: left;
+  font-family: inherit;
+}
+
+.comment-section textarea::placeholder {
+  color: #000000;
+  font-weight: normal;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-draft {
+  background-color: #ffffff;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+  font-weight: bold;
+}
+
+.btn-draft:hover {
+  background-color: #f8fafc;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.btn-submit {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.btn-submit:hover {
+  background-color: #2563eb;
+}
+
+/* Transfer Workflow */
+.workflow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem; /* slightly wider padding */
+  background-color: transparent;
+  border-radius: 0;
+  width: 100%; /* ✅ makes it span full container */
+  margin-bottom: 0; /* ✅ removes space below */
+}
+
+.additional-controls {
+  gap: 1.5rem; /* consider reducing this if it’s causing vertical spacing */
+}
+
+.comment-section {
+  margin-bottom: 1rem; /* reduce from 2rem if needed */
+}
+
+.workflow-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.workflow span {
+  color: #000000;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.workflow-icon, .chevron-icon {
+  background: none;   /* ensures no extra fill layer */
+  fill: currentColor; /* inherits text color */
+}
+
+.chevron-icon:hover {
+  color: #374151;
+}
+
+/* Policies Link */
+.policies {
+  margin-top: 2rem; /* or whatever spacing feels right */
+  padding-top: 1rem;
+}
+
+
+.policies a {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.policies a:hover {
+  color: #9ca3af;
+}
+
+.policy-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}

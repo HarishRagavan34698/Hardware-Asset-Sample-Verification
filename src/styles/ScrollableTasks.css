@@ -1,0 +1,27 @@
+.scrollable-container > div::-webkit-scrollbar {
+  width: 4px; /* Shrinks the horizontal footprint */
+}
+
+.scrollable-container > div::-webkit-scrollbar-track {
+  background: transparent; /* Optional: keep it invisible */
+}
+
+.scrollable-container > div::-webkit-scrollbar-thumb {
+  background-color: #0cbbe7;
+  border-radius: 4px;
+  min-height: 20px; /* Optional: visually short thumb */
+}
+
+.scroll-indicator-track {
+  position: absolute;
+  right: 2px;
+  top: 0;
+  width: 4px;
+  background: transparent;
+  pointer-events: none;
+  overflow: hidden;
+  justify-content: center;
+   align-items: center;
+   height: 100px;
+}
+
