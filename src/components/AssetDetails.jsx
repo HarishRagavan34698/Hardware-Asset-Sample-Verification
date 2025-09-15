@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/AssetDetails.css';
+import uploadIcon from '../assets/svg/upload.svg';
+import viewIcon from '../assets/svg/view.svg';
 
 const AssetDetails = () => {
   const [assetData, setAssetData] = useState([
@@ -11,7 +13,8 @@ const AssetDetails = () => {
       productName: "Samsung TFT Monitor",
       model: "Samsung B2030N",
       assetStatus: "In Use",
-      assetLocation: "Outside off"
+      assetLocation: "Outside off",
+      attachment: null
     },
     {
       id: 2,
@@ -21,7 +24,8 @@ const AssetDetails = () => {
       productName: "Samsung Galaxy Book Pro",
       model: "NP950XDB-KA1US",
       assetStatus: "Available",
-      assetLocation: "Office"
+      assetLocation: "Office",
+      attachment: null
     },
     {
       id: 3,
@@ -31,7 +35,8 @@ const AssetDetails = () => {
       productName: "Samsung Galaxy S24",
       model: "SM-S921B",
       assetStatus: "In Use",
-      assetLocation: "Lab"
+      assetLocation: "Lab",
+      attachment: null
     }
   ]);
 
@@ -61,7 +66,7 @@ const AssetDetails = () => {
   const handleAddAsset = () => {
     if (newAsset.itemName && newAsset.assetNumber && newAsset.serialNumber && 
         newAsset.productName && newAsset.model) {
-      setAssetData([...assetData, { ...newAsset, id: assetData.length + 1 }]);
+      setAssetData([...assetData, { ...newAsset, id: assetData.length + 1, attachment: null }]);
       setNewAsset({
         itemName: "",
         assetNumber: "",
@@ -74,13 +79,43 @@ const AssetDetails = () => {
     }
   };
 
-  const handleFileUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      console.log('File uploaded:', file.name);
-      // Handle file upload logic here
-    }
+  const handleFileUpload = (e, assetId) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const objectUrl = URL.createObjectURL(file);
+    setAssetData(prev => prev.map(item => {
+      if (item.id !== assetId) return item;
+      if (item.attachment && item.attachment.url) {
+        try { URL.revokeObjectURL(item.attachment.url); } catch (_) {}
+      }
+      return {
+        ...item,
+        attachment: {
+          name: file.name,
+          type: file.type,
+          url: objectUrl
+        }
+      };
+    }));
+    // reset input value so same file can be re-selected later
+    try { e.target.value = null; } catch (_) {}
   };
+
+  const handleViewAttachment = (attachment) => {
+    if (!attachment || !attachment.url) return;
+    window.open(attachment.url, '_blank', 'noopener,noreferrer');
+  };
+
+  useEffect(() => {
+    return () => {
+      // cleanup object URLs on unmount
+      assetData.forEach(item => {
+        if (item.attachment && item.attachment.url) {
+          try { URL.revokeObjectURL(item.attachment.url); } catch (_) {}
+        }
+      });
+    };
+  }, []);
 
   const handleDeclarationChange = (field) => {
     setDeclaration({
@@ -90,12 +125,17 @@ const AssetDetails = () => {
   };
 
   return (
+
+    
     <div className="asset-details-container">
-      
+    
+
       <div className="asset-table-container">
+        
         <table className="asset-table">
           <thead>
             <tr className="table-header">
+                
               <th>Item Name</th>
               <th>Asset/Sample No</th>
               <th>Serial Number</th>
@@ -154,16 +194,22 @@ const AssetDetails = () => {
                     <input 
                       type="file" 
                       accept=".png,.jpg,.jpeg,.gif,.pdf"
-                      onChange={handleFileUpload}
+                      onChange={(e) => handleFileUpload(e, asset.id)}
                       style={{ display: 'none' }}
                     />
-                    <span className="upload-text">Upload</span>
-                    <span className="upload-icon">↑</span>
+                    <span className="upload-icon" title={asset.attachment ? asset.attachment.name : 'Upload file'}>
+                      <img src={uploadIcon} alt="Upload" />
+                    </span>
                   </label>
                 </td>
                 <td>
-                  <button className="view-image-button">
-                    <span className="view-icon">📎</span>
+                  <button 
+                    className="view-image-button"
+                    onClick={() => handleViewAttachment(asset.attachment)}
+                    disabled={!asset.attachment}
+                    title={asset.attachment ? `View ${asset.attachment.name}` : 'No file attached'}
+                  >
+                    <span className="view-icon"><img src={viewIcon} alt="View" /></span>
                   </button>
                 </td>
               </tr>

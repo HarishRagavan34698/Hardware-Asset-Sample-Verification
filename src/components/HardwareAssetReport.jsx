@@ -8,6 +8,8 @@ import RM_Evaluation from './RM_Evaluation.jsx';
 import EmployeeDetails from './EmployeeDetails.jsx';
 import AssetDetails from './AssetDetails.jsx';
 import clipboardIcon from '../assets/svg/clipboard(2).svg';
+import viewIcon from '../assets/svg/view.svg';
+
 
 const HardwareAssetReport = () => {
   // Sample data for the report
@@ -132,7 +134,7 @@ const HardwareAssetReport = () => {
                 </td>
                 <td>
                   <button className="view-image-btn">
-                    <span className="camera-icon">📷</span>
+                    <span className="camera-icon"><img src={viewIcon} alt="View" /></span>
                   </button>
                 </td>
               </tr>
