@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/RM_Evaluation.css';
+import '../styles/Hardware_Asset.css';
 
 const RM_Evaluation = ({ children }) => {
   const [showNote, setShowNote] = useState(false);
@@ -56,7 +56,7 @@ const RM_Evaluation = ({ children }) => {
       {/* Import/Export buttons */}
     </div>
 
-    <div style={{ width: '100%', marginTop: '80px' }}>
+    <div style={{ width: '100%', marginTop: '10px'}}>
       {children}
     </div>
   </div>

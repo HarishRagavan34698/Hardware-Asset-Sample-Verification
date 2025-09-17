@@ -13,6 +13,7 @@
 	justify-content: flex-start;
 	margin: 0;
 	box-sizing: border-box;
+  margin-left: -16px; /* or -16px for a stronger shift */
 }
 
 /* Top-right controls */

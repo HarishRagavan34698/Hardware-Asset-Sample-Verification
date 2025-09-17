@@ -5,7 +5,7 @@ import './styles/App.css'
 import './styles/Arrow.css';
 import Navbar from './components/Navbar.jsx';
 import AdditionalControls from "./components/AdditionalControls"; 
-import RM_Evaluation from './components/RM_Evaluation.jsx';
+import RM_Evaluation from './components/Hardware_asset.jsx';
 import EmployeeDetails from './components/EmployeeDetails.jsx';
 import AssetDetails from './components/AssetDetails.jsx';
 import HardwareAssetReport from './components/HardwareAssetReport.jsx';
