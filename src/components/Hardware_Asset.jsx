@@ -44,7 +44,6 @@ const RM_Evaluation = ({ children }) => {
 
       {showNote && (
         <div className="note-popup-inline">
-          <button className="btn-close" onClick={() => setShowNote(false)}>&times;</button>
             <h3>Note: </h3>
             <p>1. Please take asset label latest picture with date water mark and upload(<b>To enable water mark adjust the camera setting</b>).</p>
             <p>2. <b>In use :</b> Item is in use currently.<br/><b>Not in use :</b> Item is not in use currently and idle from last 6 months.<br/><b>Defective :</b>Item not in working condition. Required repair.<br/><b>Missing :</b>Untraceable or lost. ok</p>
